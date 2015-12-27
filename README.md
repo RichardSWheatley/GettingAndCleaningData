@@ -13,7 +13,7 @@ I have created a script in R named run_analysis.R
  > - Its activity label. 
  > - An identifier of the subject who carried out the experiment.
   
-Inside the folder _UCI HAR Dataset_ from the zip file above is a README.txt fiel that explains more of the contents.
+Inside the folder _/UCI HAR Dataset/_ from the above zip file above is a README.txt file that explains more about the contents.
 
 **run_analysis.R** performs the following functions on the data found in the zip file and collected in the study 
 
