@@ -74,12 +74,13 @@ rm(indx,combined_dataset);
 mean_std_data_set$activity <- factor(mean_std_data_set$activity, levels = activity_labels[,1], labels = activity_labels[,2]);
 mean_std_data_set$subject_id <- as.factor(mean_std_data_set$subject_id);
 
+# clean up variables no longer in use
 rm(activity_labels);
 
-# clean up variables no longer in use
-tidy_data <- aggregate(. ~subject_id + activity, mean_std_data_set, mean)
+tidy_data <- aggregate(. ~ activity + subject_id, data = mean_std_data_set, mean)
 tidy_data <- tidy_data[order(tidy_data$subject_id,tidy_data$activity),]
-rm(mean_std_data_set);
 
 # clean up variables no longer in use
+rm(mean_std_data_set);
+
 write.table(tidy_data, file = "tidy_data.txt", row.names = FALSE)

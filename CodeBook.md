@@ -13,13 +13,13 @@ The immediately following information is taken directly from the above website
 
 >  The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
-> Attribute Information
-  For each record in the dataset it is provided:
-   - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-   - Triaxial Angular velocity from the gyroscope.
-   - A 561-feature vector with time and frequency domain variables.
-   - Its activity label.
-   - An identifier of the subject who carried out the experiment.
+> Attribute Information:
+    For each record in the dataset it is provided:
+     - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+     - Triaxial Angular velocity from the gyroscope.
+     - A 561-feature vector with time and frequency domain variables.
+     - Its activity label.
+     - An identifier of the subject who carried out the experiment.
 
   Inside the folder _/UCI HAR Dataset/_ from the above zip file above is a ".README.txt"
   The following is an excerpt that describes the variables.'features_info.txt': Shows information about the variables used on the feature vector.
@@ -65,4 +65,13 @@ How my run_analysis.R implements the above steps:
   * Merge the training and test data together with _rbind_ using the following variable
     * combined_dataset
 * Extract the data from only columns that contain mean and standard deviation data.
+  * Using the _grepl_ command with the _"mean|std|activity|subject_id"_ pattern along with _ignore.case=TRUE_ to grab only the needed data
+  * Store only the columns extracted from the above _grepl_ statement into the following variable
+    * mean_std_data_set
 * Process the data by calculating the mean with respect to the subject's ID number and the activity name.
+  * Using Dot notation form of the _aggregate_ function I was able to split the data into subsets, compute the summary statistics for each, and return the result in a convenient form.
+  * This form was placed into the variable below:
+    * tidy_data
+* Place the data into a text file
+  * This was done by using the _write.table_ function and place into the file name below:
+    * tidy_data.txt
