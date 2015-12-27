@@ -3,7 +3,7 @@
 I have created a script in R named run_analysis.R
 * There is data at the following location:
   * https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-* The data is from a study titled: Human Activity Recognition Using Smartphones Data Set
+* The data is from a study titled: _Human Activity Recognition Using Smartphones Data Set_
   * http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
  > For each record in the dataset it is provided: 
