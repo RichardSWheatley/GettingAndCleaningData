@@ -68,6 +68,10 @@ rm(training_data_all,test_data_all)
 indx <- grepl("mean|std|subject_id|activity", names(combined_dataset), ignore.case=TRUE);
 mean_std_data_set <- combined_dataset[,indx];
 
+names(mean_std_data_set) <- gsub(pattern="Freq", replacement="Frequency", names(mean_std_data_set))
+names(mean_std_data_set) <- gsub(pattern="[-]", replacement="_", names(mean_std_data_set))
+names(mean_std_data_set) <- gsub(pattern="[()]", replacement="", names(mean_std_data_set))
+
 # clean up variables no longer in use
 rm(indx,combined_dataset);
 
@@ -77,7 +81,7 @@ mean_std_data_set$subject_id <- as.factor(mean_std_data_set$subject_id);
 # clean up variables no longer in use
 rm(activity_labels);
 
-tidy_data <- aggregate(. ~ activity + subject_id, data = mean_std_data_set, mean)
+tidy_data <- aggregate(. ~ activity + subject_id, data = mean_std_data_set, FUN = "mean")
 tidy_data <- tidy_data[order(tidy_data$subject_id,tidy_data$activity),]
 
 # clean up variables no longer in use
