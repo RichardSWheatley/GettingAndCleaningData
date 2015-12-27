@@ -21,7 +21,6 @@
 ##########################################################################################################
 
 rm(list = ls())
-library(reshape2)
 
 setwd("C:/Users/rwheatley/Desktop/Coursera/Getting and Cleaning Data/Week3/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset");
 
