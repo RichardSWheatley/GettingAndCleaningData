@@ -4,6 +4,7 @@ I have created a script in R named run_analysis.R
 * There is data at the following location:
   * https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 * The data is from a study titled: Human Activity Recognition Using Smartphones Data Set
+  * http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
  > For each record in the dataset it is provided: 
  > - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration. 
@@ -11,7 +12,8 @@ I have created a script in R named run_analysis.R
  > - A 561-feature vector with time and frequency domain variables. 
  > - Its activity label. 
  > - An identifier of the subject who carried out the experiment.
-
+ 
+"run_analysis.R" performs the following functions on the data found int he zip file and collected in the study 
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 3. Uses descriptive activity names to name the activities in the data set
