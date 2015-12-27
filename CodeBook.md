@@ -69,6 +69,7 @@ How my run_analysis.R implements the above steps:
   * Store only the columns extracted from the above _grepl_ statement into the following variable
     * mean_std_data_set
 * Process the data by calculating the mean with respect to the subject's ID number and the activity name.
+  * Using the _factor_ command I enabled the data to be used in the _aggregate_ command used below.
   * Using Dot notation form of the _aggregate_ function I was able to split the data into subsets, compute the summary statistics for each, and return the result in a convenient form.
   * This form was placed into the variable below:
     * tidy_data
