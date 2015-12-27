@@ -13,6 +13,8 @@ I have created a script in R named run_analysis.R
  > - Its activity label. 
  > - An identifier of the subject who carried out the experiment.
   
+Inside the folder _UCI HAR Dataset_ from the zip file above is a README.txt fiel that explains more of the contents.
+
 **run_analysis.R** performs the following functions on the data found in the zip file and collected in the study 
 
 1. Merges the training and the test sets to create one data set.
